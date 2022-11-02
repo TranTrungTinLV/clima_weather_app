@@ -19,7 +19,7 @@ class WeatherModel {
     try {
       await location.getCurrentLocation();
       NetworkHelper networkHelper = NetworkHelper(
-          "$openWeatherURl?lat=9.811239&lon=106.299982&appid=$apiKey&units=metric");
+          "$openWeatherURl?lat=${location.latitude}&lon=${location.longtitude}&appid=$apiKey&units=metric");
       var weatherData = await networkHelper.getData();
       return weatherData;
     } catch (e) {
